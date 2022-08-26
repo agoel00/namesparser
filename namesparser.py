@@ -66,7 +66,8 @@ class HumanNames():
         Split name mess into name tokens.
         """
         name_tokens = []
-        split_names = re.split(" ?(and|,| ) ?", names_str)
+#         split_names = re.split(" ?(and|,| ) ?", names_str)
+        split_names = re.split(" ?(and(?=\s)|,| ) ?", names_str)
         for s in split_names:
             if s == "and":
                 name_tokens.append(Token("AND"))
